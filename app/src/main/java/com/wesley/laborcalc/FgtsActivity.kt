@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_fgts.*
+import kotlin.math.roundToInt
 
 class FgtsActivity : AppCompatActivity() {
 
@@ -14,8 +15,16 @@ class FgtsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_fgts)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        btnCalcular.setOnClickListener {
+            val fgts = ((txtSalary.text.toString().toDouble() * 0.8) * txtMonth.text.toString().toDouble()) /10
+            txtResultado.text =  "Resultado: R$ %.2f".format(fgts)
+            txtByMes.text = "Valor por mês: R$ %.2f".format((txtSalary.text.toString().toDouble() * 0.08))
+            txtCalculo.text = "Cálculo: " + txtSalary.text.toString() + " x 0.8" + " x " + txtMonth.text.toString()
+        }
+
+
         btnVerFonte.setOnClickListener {
-            val uris = Uri.parse("https://calculofgts.net/")
+            val uris = Uri.parse("http://www.calculador.com.br/calculo/fgts")
             val intents = Intent(Intent.ACTION_VIEW, uris)
             startActivity(intents)
         }

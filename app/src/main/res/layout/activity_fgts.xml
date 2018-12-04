@@ -4,92 +4,66 @@
                                              xmlns:tools="http://schemas.android.com/tools"
                                              android:layout_width="match_parent"
                                              android:layout_height="match_parent"
-                                             tools:context=".FgtsActivity">
+                                             tools:context=".FgtsActivity" app:barrierAllowsGoneWidgets="true">
 
     <EditText
-            android:id="@+id/etxSalarioBruto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:ems="10"
-            android:hint="Salário Bruto"
-            android:inputType="numberDecimal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-            android:id="@+id/txtZerarSalario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="x"
-            app:layout_constraintBottom_toBottomOf="@+id/etxSalarioBruto"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/etxSalarioBruto" />
-
-    <EditText
-            android:id="@+id/etxMesesTrabalhados"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:ems="10"
-            android:hint="Meses Trabalhados"
-            android:inputType="numberDecimal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etxSalarioBruto" />
-
-    <TextView
-            android:id="@+id/txtZerarMeses"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="x"
-            app:layout_constraintBottom_toBottomOf="@+id/etxMesesTrabalhados"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/etxMesesTrabalhados" />
-
-    <Button
-            android:id="@+id/btnCalcular"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/txtMonth"
+            android:hint="Meses Trab." app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:textAlignment="viewEnd" android:textStyle="bold" android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/txtSalary"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/txtSalary" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="16dp"
+            android:hint="Salário Bruto" android:textAlignment="viewEnd" android:textStyle="bold"/>
+    <Button
             android:text="Calcular"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etxMesesTrabalhados" />
-
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCalcular" android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/txtSalary"/>
     <Button
-            android:id="@+id/btnVerFonte"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
             android:text="Fonte"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnCalcular" />
-
-    <TextView
-            android:id="@+id/txtResultado"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnVerFonte" />
+            android:id="@+id/btnVerFonte" android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtCalculo"/>
+    <TextView
+            android:text="Resultado: - "
+            android:layout_width="0dp"
+            android:layout_height="41dp"
+            android:id="@+id/txtResultado" android:textStyle="bold"
+            android:textAlignment="viewStart" android:textSize="24sp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:layout_marginTop="76dp"
+            app:layout_constraintTop_toBottomOf="@+id/btnCalcular"/>
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtCalculo"
+            android:text="Calculo: -"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:textSize="18sp"
+            app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtByMes"/>
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtByMes"
+            android:text="Valor por mês: - "
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:textSize="18sp"
+            app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtResultado"/>
 </android.support.constraint.ConstraintLayout>
