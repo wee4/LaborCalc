@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_fgts.*
-import kotlin.math.roundToInt
 
 class FgtsActivity : AppCompatActivity() {
 
